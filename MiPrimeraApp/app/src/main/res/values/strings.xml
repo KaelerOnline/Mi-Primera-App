@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Mi Primera App</string>
+    <string name="app_name">Skeletor\'s here mate</string>
+    <string name="Hello">Ya called?</string>
+    <string name="font">serif-monospace</string>
+    <string name="second_activity">Second Activity</string>
+    <string name="url">URL</string>
+    <string name="number">Number</string>
 </resources>
