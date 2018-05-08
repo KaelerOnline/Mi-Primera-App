@@ -99,10 +99,11 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:contentDescription="@string/todo"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:onClick="unf"/>
+        android:background="@drawable/ic_action_doomguy_reap_face_57c68ecf232e3"
+        android:contentDescription="@string/todo"
+        android:onClick="unf"
+        app:srcCompat="@mipmap/ic_launcher" />
 
 </LinearLayout>

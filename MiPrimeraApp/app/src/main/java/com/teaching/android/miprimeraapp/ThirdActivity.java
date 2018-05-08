@@ -38,6 +38,10 @@ public class ThirdActivity extends AppCompatActivity {
         Vibrator v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         if (v != null) {
             v.vibrate(250);
+            usernameEditText.setText("");
+            emailEditText.setText("");
+            passwordEditText.setText("");
+            ageEditText.setText("");
         }
     }
 

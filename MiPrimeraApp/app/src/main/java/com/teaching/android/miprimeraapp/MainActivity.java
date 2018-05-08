@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.support.v7.app.ActionBar;
-
-
 import static android.content.Intent.ACTION_DIAL;
 import static android.content.Intent.ACTION_VIEW;
 
@@ -82,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void tercero (View view){
         Intent intent = new Intent(this,ThirdActivity.class);
+        startActivity(intent);
+    }
+
+    public void quinto (View view){
+        Intent intent = new Intent(this, FifthActivity.class);
         startActivity(intent);
     }
 
