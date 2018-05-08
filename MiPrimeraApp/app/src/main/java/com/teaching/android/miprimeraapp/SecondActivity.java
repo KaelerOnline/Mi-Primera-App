@@ -16,6 +16,7 @@ public class SecondActivity extends AppCompatActivity {
         String valor = intent.getStringExtra("id");
         setContentView(R.layout.activity_second);
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setIcon(R.mipmap.ic_launcher);
         Log.d("SecondActivity:", valor);
