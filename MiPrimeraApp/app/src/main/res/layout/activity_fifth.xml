@@ -7,6 +7,14 @@
     tools:context=".FifthActivity">
 
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="false" />
+
     <TextView
         android:id="@+id/user"
         android:layout_width="wrap_content"
@@ -51,16 +59,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/passedittext"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:onClick="submit"/>
 
     <Button
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/passedittext"
+        android:layout_alignBottom="@+id/login"
         android:layout_toEndOf="@+id/login"
-        android:text="@string/cancel"
-        android:onClick="cancel"/>
+        android:onClick="cancel"
+        android:text="@string/cancel" />
 
     <Button
         android:id="@+id/register"
@@ -68,14 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/register" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/AppTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:indeterminate="false" />
+        android:text="@string/register"
+        android:onClick="register"/>
 
 </RelativeLayout>

@@ -21,6 +21,7 @@ public class ThirdActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         ActionBar actionBar = getSupportActionBar();
@@ -32,6 +33,10 @@ public class ThirdActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
         ageEditText = findViewById(R.id.age);
+        if (intent.hasExtra("username")&& intent.hasExtra("password")){
+            usernameEditText.setText(intent.getStringExtra("username"));
+            passwordEditText.setText(intent.getStringExtra("password"));
+        }
     }
 
     public void unf (View view){

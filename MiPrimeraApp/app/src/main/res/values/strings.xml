@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Skeletor\'s here mate</string>
+    <string name="app_name">HEH HUHH</string>
     <string name="Hello">Ya called?</string>
     <string name="font">serif-monospace</string>
     <string name="second_activity">Second Activity</string>
@@ -15,4 +15,6 @@
     <string name="login">Login</string>
     <string name="cancel">Cancel</string>
     <string name="register">Register</string>
+    <string name="username_error">Username must not be blank</string>
+    <string name="password_error">Password must not be blank</string>
 </resources>
