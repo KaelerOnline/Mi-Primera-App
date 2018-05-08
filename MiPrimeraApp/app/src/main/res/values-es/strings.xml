@@ -5,4 +5,11 @@
     <string name="second_activity">Segunda Activity</string>
     <string name="url">URL</string>
     <string name="number">Número</string>
+    <string name="title_activity_third">Tercera Activity</string>
+    <string name="button_1">Pasar Datos</string>
+    <string name="todo">TODO</string>
+    <string name="username">Usuario</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="age">Edad</string>
 </resources>

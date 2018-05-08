@@ -7,7 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ActionMenuView;
+import android.support.v7.app.ActionBar;
+
 
 import static android.content.Intent.ACTION_DIAL;
 import static android.content.Intent.ACTION_VIEW;
@@ -18,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.mipmap.ic_launcher);
     }
 
     @Override
@@ -72,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
     public void numero(View view){
         Intent intent = new Intent(ACTION_DIAL, Uri.parse("tel: 1234"));
         Log.d("MainActivity","MARCO: tel: 1234");
+        startActivity(intent);
+    }
+
+    public void tercero (View view){
+        Intent intent = new Intent(this,ThirdActivity.class);
         startActivity(intent);
     }
 
