@@ -93,4 +93,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void list (View view){
+        Intent intent = new Intent(this,ListActivity.class);
+        startActivity(intent);
+    }
+
 }

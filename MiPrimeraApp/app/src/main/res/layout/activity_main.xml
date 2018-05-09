@@ -94,10 +94,23 @@
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/gifImageView"
-        android:layout_centerHorizontal="true"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/todo"
         android:onClick="gallery"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_below="@+id/gifImageView"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/todo"
+        android:onClick="list"
+        android:tint="@android:color/holo_blue_bright"
         app:srcCompat="@mipmap/ic_launcher" />
 
 </RelativeLayout>
