@@ -5,11 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ThirdActivity"
-    android:gravity="bottom"
     android:layout_weight="1"
     android:orientation="vertical"
     android:theme="@style/AppTheme"
     android:background="@drawable/agitation">
+
+    <android.support.v7.widget.Toolbar
+
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme"
+        app:title="@string/app_name"/>
 
     <EditText
         android:id="@+id/username"
@@ -54,6 +63,7 @@
         android:textColorHint="@android:color/white"
         android:textSize="14sp"
         android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,7 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:background="@drawable/ic_action_doomguy_reap_face_57c68ecf232e3"
+        android:background="@drawable/ic_action_doomguy_reap_face"
         android:contentDescription="@string/todo"
         android:onClick="unf"
         app:srcCompat="@mipmap/ic_launcher" />

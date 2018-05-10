@@ -17,4 +17,8 @@
     <string name="register">Registrarse</string>
     <string name="username_error">Usuario no puede estar en blanco</string>
     <string name="password_error">Contraseña no puede estar en blanco</string>
+    <string name="selection">Seleccionada posición: </string>
+    <string name="fourthActivity">Abriendo perfil</string>
+    <string name="fifthActivity">Abriendo login</string>
+    <string name="thirdActivity">Abriendo setup de perfil</string>
 </resources>

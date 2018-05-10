@@ -26,14 +26,25 @@
         </activity>
         <activity
             android:name=".SecondActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".ThirdActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".FourthActivity" />
-        <activity android:name=".FifthActivity" />
-        <activity android:name=".GalleryActivity" />
-        <activity android:name=".ListActivity"></activity>
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".FourthActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".FifthActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".GalleryActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ListActivity"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".BaseActivity" />
     </application>
 
 </manifest>

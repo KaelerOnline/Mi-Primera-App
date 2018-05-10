@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class ThirdActivity extends AppCompatActivity {
+public class ThirdActivity extends MainActivity {
 
 
 
@@ -24,10 +24,10 @@ public class ThirdActivity extends AppCompatActivity {
         Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.ic_launcher);
+        setupActionBar();
+        ActionBar ab = getSupportActionBar();
+        assert ab != null;
+        ab.setDisplayHomeAsUpEnabled(true);
         sendButton = findViewById(R.id.button6);
         usernameEditText = findViewById(R.id.username);
         emailEditText = findViewById(R.id.email);

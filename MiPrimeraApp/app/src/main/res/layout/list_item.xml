@@ -14,7 +14,7 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/todo"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_shortcut_doomguy_reap_face_57c68ecf232e3" />
+        android:src="@drawable/ic_shortcut_doomguy_reap_face" />
 
     <TextView
         android:id="@+id/textView"

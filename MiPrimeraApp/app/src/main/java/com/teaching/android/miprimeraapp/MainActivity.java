@@ -3,24 +3,21 @@ package com.teaching.android.miprimeraapp;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.support.v7.app.ActionBar;
+
+
 import static android.content.Intent.ACTION_DIAL;
 import static android.content.Intent.ACTION_VIEW;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.ic_launcher);
+        setupActionBar();
     }
 
     @Override
@@ -80,11 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void tercero (View view){
         Intent intent = new Intent(this,ThirdActivity.class);
-        startActivity(intent);
-    }
-
-    public void quinto (View view){
-        Intent intent = new Intent(this, FifthActivity.class);
         startActivity(intent);
     }
 

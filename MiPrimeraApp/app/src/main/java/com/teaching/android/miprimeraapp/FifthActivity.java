@@ -5,14 +5,26 @@ import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 
-public class FifthActivity extends AppCompatActivity {
-
+public class FifthActivity extends BaseActivity {
+    protected void setupActionBar(){
+        Toolbar toolbar = findViewById(R.id.toolbar3);
+        toolbar.setLogo(R.mipmap.ic_launcher);
+        setSupportActionBar(toolbar);
+        toolbar.inflateMenu(R.menu.menu_go_back);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_go_back, menu);
+        return true;
+    }
 
     EditText usernameEditText;
     EditText passwordEditText;
@@ -21,10 +33,10 @@ public class FifthActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fifth);
-        ActionBar actionBar = getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.ic_launcher);
+        setupActionBar();
+        ActionBar ab = getSupportActionBar();
+        assert ab != null;
+        ab.setDisplayHomeAsUpEnabled(true);
         usernameEditText = findViewById(R.id.useredittext);
         passwordEditText = findViewById(R.id.passedittext);
     }
