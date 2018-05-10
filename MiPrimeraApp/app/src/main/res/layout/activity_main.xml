@@ -32,7 +32,7 @@
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button"
@@ -71,7 +71,7 @@
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/gifImageView"
+        android:layout_above="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/todo"
         android:onClick="tercero"
@@ -82,8 +82,8 @@
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/gifImageView"
         android:background="@android:color/transparent"
         android:contentDescription="@string/todo"
         android:onClick="gallery"
@@ -93,8 +93,8 @@
         android:id="@+id/imageButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
         android:layout_alignEnd="@+id/textView2"
-        android:layout_below="@+id/gifImageView"
         android:background="@android:color/transparent"
         android:contentDescription="@string/todo"
         android:onClick="list"
