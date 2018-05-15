@@ -1,16 +1,19 @@
 package com.teaching.android.miprimeraapp.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.teaching.android.miprimeraapp.R;
+import com.teaching.android.miprimeraapp.WebViewActivity;
 import com.teaching.android.miprimeraapp.interactors.GamesInteractor;
 import com.teaching.android.miprimeraapp.model.GameModel;
 
@@ -43,7 +46,7 @@ public class GameDetailFragment extends Fragment {
         View fragmentView = inflater.inflate(R.layout.fragment_game_detail, container, false);
 
         int gameId = getArguments().getInt("game_Id",0);
-        GameModel game = new GamesInteractor().getGamesWithId(gameId);
+        final GameModel game = new GamesInteractor().getGamesWithId(gameId);
 
         ImageView icono = fragmentView.findViewById(R.id.Logo);
         RelativeLayout background = fragmentView.findViewById(R.id.game_container);
@@ -53,8 +56,22 @@ public class GameDetailFragment extends Fragment {
         background.setBackgroundResource(game.getBackgroundDrawable());
         gamedesc.setText(game.getDescription());
 
+        Button boton = fragmentView.findViewById(R.id.urlButton);
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent webintent = new Intent(getContext(),WebViewActivity.class);
+                    webintent.putExtra("url",getString(game.getOfficialWebsiteUrl()));
+                    startActivity(webintent);
+            }
+        });
+
         return fragmentView;
+
+
     }
+
+
 
 
 

@@ -103,10 +103,4 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
         }
         );
     }
-    public void urlButton (View view){
-        Intent intent = new Intent(this,WebViewActivity.class);
-        intent.putExtra("url",getString(presenter.getGames().get(currentPosition).getOfficialWebsiteUrl()));
-        startActivity(intent);
-    }
-
 }
