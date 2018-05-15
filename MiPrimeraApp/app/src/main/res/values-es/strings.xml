@@ -22,4 +22,18 @@
     <string name="fifthActivity">Abriendo login</string>
     <string name="thirdActivity">Abriendo setup de perfil</string>
     <string name="profile">Perfil</string>
+    <string name="doomActivity">Abriendo perfil de juegos</string>
+    <string name="Doom">Lo que comienza como una sospechosa alerta de intrusión acaba siendo una invasión del Infierno en Marte.
+    Lucha contra las hordas del Infierno y máquinas de naturaleza mortal en este Shooter en Primera Persona lleno de acción y horror.
+    Encuentrate hasta las rodillas en cadaveres, en las Costas del Infierno y peores lugares para acabar con este enemigo malevolente.</string>
+    <string name="doomtitle">Doom</string>
+    <string name="bloodtitle">Blood</string>
+    <string name="Blood">Eres Caleb, uno de los cuatro mas devotos del culto al señor demoníaco Tchernobog.
+    Un día se llama a los cuatro a su presencia, solo para ser traicionados de formas horribles para su disfrute.
+    Años mas tarde, después de levantar de tu tumba, juras venganza mientras una sonrisa maligna aparece en tu cara y proclamas-\'Vuelvo ¡a vivir!\'.
+    ¡Que empieze el derramamiento de sangre!</string>
+    <string name="blaketitle">Blake Stone</string>
+    <string name="BlakeStone">Encarna al Agente Interestelar Blake Stone, el cual há sido enviado para acabar con el maligno Dr Goldfire.
+    Viaja a un complejo hostil repleto de guardas demasiado entusiastas , científicos locos, sus creaciones mutantes y mas.
+    ¡Sabotea las operaciones de Goldfire acabando con sus suministros y oro y termina su reino de terror en el cosmos!</string>
 </resources>

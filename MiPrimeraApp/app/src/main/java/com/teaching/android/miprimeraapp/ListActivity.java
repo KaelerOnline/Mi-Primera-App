@@ -4,7 +4,6 @@ import android.content.Context;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,7 +15,8 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.teaching.android.miprimeraapp.interactors.GamesInteractor;
 
 
 public class ListActivity extends BaseActivity {
@@ -45,7 +45,10 @@ public class ListActivity extends BaseActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ListActivity.this, getString(R.string.selection)+ position, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent (ListActivity.this, GameDetailActivity.class);
+                int gameId = new GamesInteractor().getGames().get(position).getId();
+                intent.putExtra("position",position);
+                startActivity(intent);
             }
         });
 
@@ -54,8 +57,8 @@ public class ListActivity extends BaseActivity {
 
     private class myAdapter extends BaseAdapter {
 
-        private int[] icons = {R.drawable.ic_action_doomguy_reap_face, R.drawable.ic_shortcut_doomguy_reap_face, R.mipmap.ic_launcher};
-        private String[] names = {"ActionReap", "ShortReap", "Reap"};
+        private int[] icons = {R.mipmap.ic_doom, R.mipmap.ic_blood,R.mipmap.ic_blake};
+        private String[] names = {"Doom", "Blood","Blake Stone"};
 
         @Override
         public int getCount() {
@@ -89,13 +92,6 @@ public class ListActivity extends BaseActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         int indentity = item.getItemId();
-        switch (indentity){
-            case R.id.doomguyReapFaceShortcut:
-                Toast.makeText(this, getString(R.string.fifthActivity) ,Toast.LENGTH_LONG).show();
-                Intent intent2 = new Intent(this, FifthActivity.class);
-                startActivity(intent2);
-                break;
-        }
         return super.onOptionsItemSelected(item);
     }
 
