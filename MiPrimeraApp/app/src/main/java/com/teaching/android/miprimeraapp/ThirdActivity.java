@@ -2,7 +2,6 @@ package com.teaching.android.miprimeraapp;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
