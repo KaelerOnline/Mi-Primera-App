@@ -34,8 +34,8 @@ public class BaseActivity extends AppCompatActivity {
         int indentity = item.getItemId();
         switch (indentity){
             case R.id.doomguyReapFaceAction:
-                Toast.makeText(this, getString(R.string.doomActivity) ,Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, ListActivity.class);
+                Toast.makeText(this, getString(R.string.fourthActivity) ,Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, FourthActivity.class);
                 startActivity(intent);
                 break;
 

@@ -3,6 +3,7 @@ package com.teaching.android.miprimeraapp;
 import android.content.Intent;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;

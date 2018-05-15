@@ -22,22 +22,4 @@
     <string name="fifthActivity">Opening login</string>
     <string name="thirdActivity">Opening profile setup</string>
     <string name="profile">Profile</string>
-    <string name="doomActivity">Opening game profile</string>
-    <string name="Doom">What begins as a suspicious security outbreak leads to an invasion of Hell on Mars.
-    Battle against the hordes of Hell and machines of deadly nature in this action-packed, horror-filled First Person Shooter.
-    Find yourself Knee-Deep in the dead, through the Shores of Hell and much worse places to end this malevolent foe.</string>
-    <string name="doomtitle">Doom</string>
-    <string name="bloodtitle">Blood</string>
-    <string name="Blood">You\'re Caleb, one of four of the most devout in the cult of the demon lord Tchernobog.
-    One day the four of you are called to his presence, only for him to betray you four in gruesome ways for his enjoyment.
-    Years later as you emerge from your grave, you bow revenge as you claim in a twisted grin-\'I live, Again!\'.
-    Let the shedding of Blood begin!</string>
-    <string name="games">Games</string>
-    <string name="blaketitle">Blake Stone</string>
-    <string name="BlakeStone">Play as Interstellar Agent Blake Stone as he\'s sent to face off against the evil Dr Goldfire.
-    Travel to a set of hostile facilities filled with overzealous guards, insane scientists, their mutant creations and more.
-    Sabotage Goldfire\'s operations by taking away his supplies and gold and end his reign of terror across the stars!</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
