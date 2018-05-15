@@ -5,11 +5,11 @@ public class GameModel {
     private int id;
     private int name;
     private int description;
-    private String officialWebsiteUrl;
+    private int officialWebsiteUrl;
     private int iconDrawable;
     private int backgroundDrawable;
 
-    public GameModel(int id, int name, int description, String officialWebsiteUrl, int iconDrawable, int backgroundDrawable) {
+    public GameModel(int id, int name, int description, int officialWebsiteUrl, int iconDrawable, int backgroundDrawable) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -42,11 +42,11 @@ public class GameModel {
         this.description = description;
     }
 
-    public String getOfficialWebsiteUrl() {
+    public int getOfficialWebsiteUrl() {
         return officialWebsiteUrl;
     }
 
-    public void setOfficialWebsiteUrl(String officialWebsiteUrl) {
+    public void setOfficialWebsiteUrl(int officialWebsiteUrl) {
         this.officialWebsiteUrl = officialWebsiteUrl;
     }
 

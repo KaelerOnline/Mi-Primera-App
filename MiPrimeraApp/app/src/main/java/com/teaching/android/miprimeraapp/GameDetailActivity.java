@@ -1,5 +1,6 @@
 package com.teaching.android.miprimeraapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 
 import com.teaching.android.miprimeraapp.fragments.GameDetailFragment;
 import com.teaching.android.miprimeraapp.model.GameModel;
@@ -55,7 +57,7 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter{
 
-        public MyPagerAdapter(FragmentManager fm) {
+        MyPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -100,6 +102,11 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
             }
         }
         );
+    }
+    public void urlButton (View view){
+        Intent intent = new Intent(this,WebViewActivity.class);
+        intent.putExtra("url",getString(presenter.getGames().get(currentPosition).getOfficialWebsiteUrl()));
+        startActivity(intent);
     }
 
 }

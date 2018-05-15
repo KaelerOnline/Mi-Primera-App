@@ -31,4 +31,14 @@
         android:textSize="12sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/urlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:onClick="urlButton"
+        android:text="@string/url" />
+
 </RelativeLayout>
