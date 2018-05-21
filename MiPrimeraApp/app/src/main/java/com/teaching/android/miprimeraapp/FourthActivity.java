@@ -34,7 +34,7 @@ public class FourthActivity extends BaseActivity {
         ActionBar ab = getSupportActionBar();
         assert ab != null;
         ab.setDisplayHomeAsUpEnabled(true);
-        Intent intent = getIntent();
+        /*Intent intent = getIntent();
         String username = intent.getStringExtra("username");
         String email = intent.getStringExtra("email");
         String password = intent.getStringExtra("password");
@@ -47,7 +47,7 @@ public class FourthActivity extends BaseActivity {
         username2.setText(username);
         email2.setText(email);
         password2.setText(password);
-        age2.setText(age);
+        age2.setText(age);*/
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         int indentity = item.getItemId();

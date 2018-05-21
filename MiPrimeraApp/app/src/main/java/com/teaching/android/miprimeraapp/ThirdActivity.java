@@ -53,10 +53,10 @@ public class ThirdActivity extends MainActivity {
 
     public void introducir (View view){
         Intent intent = new Intent(this, FourthActivity.class);
-        intent.putExtra("username",usernameEditText.getText().toString());
+        /*intent.putExtra("username",usernameEditText.getText().toString());
         intent.putExtra("email",emailEditText.getText().toString());
         intent.putExtra("password",passwordEditText.getText().toString());
-        intent.putExtra("age",ageEditText.getText().toString());
+        intent.putExtra("age",ageEditText.getText().toString());*/
 
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
         SharedPreferences.Editor prefEdit = sharedPref.edit();
