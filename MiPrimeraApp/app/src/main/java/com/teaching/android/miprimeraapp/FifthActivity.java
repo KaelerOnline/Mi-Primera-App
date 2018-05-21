@@ -1,6 +1,8 @@
 package com.teaching.android.miprimeraapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 
 
 public class FifthActivity extends BaseActivity {
+
     protected void setupActionBar(){
         Toolbar toolbar = findViewById(R.id.toolbar3);
         toolbar.setLogo(R.mipmap.ic_launcher);
@@ -46,9 +49,20 @@ public class FifthActivity extends BaseActivity {
 
         if (TextUtils.isEmpty(username)){
             usernameEditText.setError(getString(R.string.username_error));
-        }
-        if ( TextUtils.isEmpty(password)){
+        }else if ( TextUtils.isEmpty(password)){
             passwordEditText.setError(getString(R.string.password_error));
+        }
+        else {
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
+            SharedPreferences.Editor prefEdit = sharedPref.edit();
+            prefEdit.putString("username",usernameEditText.getText().toString());
+            prefEdit.apply();
+            Intent profileIntent = new Intent(this, FourthActivity.class);
+            profileIntent.putExtra("username",usernameEditText.getText().toString());
+            profileIntent.putExtra("password",passwordEditText.getText().toString());
+            profileIntent.putExtra("age","");
+            profileIntent.putExtra("email","");
+            startActivity(profileIntent);
         }
     }
 
@@ -65,6 +79,16 @@ public class FifthActivity extends BaseActivity {
             v.vibrate(250);
             usernameEditText.setText("");
             passwordEditText.setText("");
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
+        String value = sharedPref.getString("username",null);
+        if (value != null){
+            usernameEditText.setText(value);
         }
     }
 }

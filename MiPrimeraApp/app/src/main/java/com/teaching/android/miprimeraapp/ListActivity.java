@@ -16,7 +16,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.teaching.android.miprimeraapp.interactors.GamesInteractor;
 
 
 public class ListActivity extends BaseActivity {
@@ -46,7 +45,6 @@ public class ListActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent (ListActivity.this, GameDetailActivity.class);
-                int gameId = new GamesInteractor().getGames().get(position).getId();
                 intent.putExtra("position",position);
                 startActivity(intent);
             }
@@ -91,7 +89,6 @@ public class ListActivity extends BaseActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        int indentity = item.getItemId();
         return super.onOptionsItemSelected(item);
     }
 

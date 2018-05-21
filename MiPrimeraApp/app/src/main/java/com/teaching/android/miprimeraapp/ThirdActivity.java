@@ -1,6 +1,8 @@
 package com.teaching.android.miprimeraapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -55,6 +57,15 @@ public class ThirdActivity extends MainActivity {
         intent.putExtra("email",emailEditText.getText().toString());
         intent.putExtra("password",passwordEditText.getText().toString());
         intent.putExtra("age",ageEditText.getText().toString());
+
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefEdit = sharedPref.edit();
+        prefEdit.putString("username",usernameEditText.getText().toString());
+        prefEdit.putString("email",emailEditText.getText().toString());
+        prefEdit.putString("age",ageEditText.getText().toString());
+        prefEdit.putString("password",passwordEditText.getText().toString());
+
+        prefEdit.apply();
         startActivity(intent);
     }
 }

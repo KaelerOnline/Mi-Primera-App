@@ -43,4 +43,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Shared Preferences -->
+    <string name="login_activity_file">com.teaching.android.miprimeraapp.LOGIN_ACTIVITY_FILE</string>
+
 </resources>

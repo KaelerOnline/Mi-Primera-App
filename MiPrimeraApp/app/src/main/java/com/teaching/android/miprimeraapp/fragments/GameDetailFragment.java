@@ -3,6 +3,7 @@ package com.teaching.android.miprimeraapp.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.teaching.android.miprimeraapp.R;
 import com.teaching.android.miprimeraapp.WebViewActivity;
 import com.teaching.android.miprimeraapp.interactors.GamesInteractor;
 import com.teaching.android.miprimeraapp.model.GameModel;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,12 +43,12 @@ public class GameDetailFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_game_detail, container, false);
 
-        int gameId = getArguments().getInt("game_Id",0);
+        int gameId = Objects.requireNonNull(getArguments()).getInt("game_Id",0);
         final GameModel game = new GamesInteractor().getGamesWithId(gameId);
 
         ImageView icono = fragmentView.findViewById(R.id.Logo);
