@@ -3,13 +3,20 @@ package com.teaching.android.miprimeraapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
+import android.net.Uri;
+import android.os.Environment;
+import android.support.v4.widget.ImageViewCompat;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.File;
 
 
 public class FourthActivity extends BaseActivity {
@@ -34,6 +41,23 @@ public class FourthActivity extends BaseActivity {
         ActionBar ab = getSupportActionBar();
         assert ab != null;
         ab.setDisplayHomeAsUpEnabled(true);
+
+        ImageView myImage = findViewById(R.id.imageExt);
+        if(isExternalStorageReadable()){
+            if(isExternalStorageWritable()){
+                File imageFile = new File(getExternalFilesDir(null),"web_hi_res_512.png");
+                if (imageFile.exists()){
+                    myImage.setImageURI(Uri.fromFile(imageFile));
+                }else {
+                    myImage.setImageURI(null);
+                }
+            }else{
+                myImage.setImageURI(null);
+            }
+        }else{
+            myImage.setImageURI(null);
+        }
+
         /*Intent intent = getIntent();
         String username = intent.getStringExtra("username");
         String email = intent.getStringExtra("email");
@@ -92,4 +116,23 @@ public class FourthActivity extends BaseActivity {
         prefEdit.putString("age",age.getText().toString());
         prefEdit.apply();
     }
+
+    public boolean isExternalStorageReadable (){
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)||Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 
 
+import java.io.File;
+
 import static android.content.Intent.ACTION_DIAL;
 import static android.content.Intent.ACTION_VIEW;
 
