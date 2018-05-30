@@ -12,9 +12,9 @@ public class GamesInteractor {
 
     public GamesInteractor(){
         if (games == null){
-            GameModel doom = new GameModel(0,R.string.doomtitle, R.string.Doom, R.string.doomURL, R.drawable.doom_logo, R.drawable.doombg);
-            GameModel blood = new GameModel(1,R.string.bloodtitle,R.string.Blood, R.string.bloodURL, R.drawable.msdos_blood,R.drawable.caleb);
-            GameModel blake= new GameModel(2,R.string.blaketitle,R.string.BlakeStone,R.string.blakeURL, R.drawable.blakelogo,R.drawable.blake_800x564);
+            GameModel doom = new GameModel(0,"", "", "", "", "");
+            GameModel blood = new GameModel(1,"","","", "","");
+            GameModel blake= new GameModel(2,"","","", "","");
             games = new ArrayList<>();
             games.add(doom);
             games.add(blood);

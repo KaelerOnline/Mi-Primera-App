@@ -16,6 +16,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.teaching.android.miprimeraapp.interactors.GamesFirebseInteractor;
 
 
 public class ListActivity extends BaseActivity {
@@ -31,14 +32,26 @@ public class ListActivity extends BaseActivity {
         return true;
     }
 
+    private GridView listView;
+    private GamesFirebseInteractor gamesFirebseInteractor;
+    private myAdapter myAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         setupActionBar();
 
-        GridView listView = findViewById(R.id.list_view);
-        listView.setAdapter(new myAdapter());
+        listView = findViewById(R.id.list_view);
+        gamesFirebseInteractor = new GamesFirebseInteractor();
+        gamesFirebseInteractor.getGames(new GamesInteractorCallback() {
+            @Override
+            public void onGamesAvailable() {
+                findViewById(R.id.loading_indicator).setVisibility(View.GONE);
+                myAdapter = new myAdapter();
+                listView.setAdapter(myAdapter);
+            }
+        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 

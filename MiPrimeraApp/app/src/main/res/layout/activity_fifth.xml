@@ -11,18 +11,9 @@
         android:id="@+id/toolbar3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
         android:theme="@style/AppTheme"
         app:title="@string/login"/>
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/AppTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:indeterminate="false" />
 
     <TextView
         android:id="@+id/user"
@@ -88,5 +79,16 @@
         android:layout_centerHorizontal="true"
         android:text="@string/register"
         android:onClick="register"/>
+
+    <ImageButton
+        android:id="@+id/ProfileView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passedittext"
+        android:layout_toEndOf="@+id/cancel"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/todo"
+        android:onClick="cameraIntent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
 </RelativeLayout>

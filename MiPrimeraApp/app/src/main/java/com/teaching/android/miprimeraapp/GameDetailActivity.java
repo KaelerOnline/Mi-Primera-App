@@ -9,8 +9,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 
 import com.teaching.android.miprimeraapp.fragments.GameDetailFragment;
+import com.teaching.android.miprimeraapp.interactors.GamesFirebseInteractor;
 import com.teaching.android.miprimeraapp.model.GameModel;
 import com.teaching.android.miprimeraapp.presenters.GameDetailPresenter;
 import com.teaching.android.miprimeraapp.view.GameDetailView;
@@ -22,6 +24,8 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
     private GameDetailPresenter presenter;
     private int currentPosition;
     private MyPagerAdapter myPagerAdapter;
+    private GamesFirebseInteractor gamesFirebseInteractor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +37,7 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
 
         presenter = new GameDetailPresenter();
 
-        currentPosition = getIntent().getIntExtra("position",0);
+        currentPosition = getIntent().getIntExtra("position", 0);
     }
 
     @Override
@@ -42,7 +46,7 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
         return true;
     }
 
-    protected void setupActionBar(){
+    protected void setupActionBar() {
         Toolbar toolbar = findViewById(R.id.toolbar6);
         toolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(toolbar);
@@ -53,7 +57,7 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
     public void onGameLoaded(GameModel game) {
     }
 
-    private class MyPagerAdapter extends FragmentStatePagerAdapter{
+    private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -73,32 +77,35 @@ public class GameDetailActivity extends BaseActivity implements GameDetailView {
         @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
-            return getString((presenter.getGames().get(position).getName()));
+            return (presenter.getGames().get(position).getName());
         }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         presenter.startPresenting(this);
-        ViewPager myViewPager =  findViewById(R.id.view_pager);
+        ViewPager myViewPager = findViewById(R.id.view_pager);
         myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
         myViewPager.setAdapter(myPagerAdapter);
         myViewPager.setCurrentItem(currentPosition);
         Objects.requireNonNull(getSupportActionBar()).setTitle(myPagerAdapter.getPageTitle(currentPosition));
         myViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                                                @Override
+                                                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            }
-            @Override
-            public void onPageSelected(int position) {
-                Objects.requireNonNull(getSupportActionBar()).setTitle(myPagerAdapter.getPageTitle(position));
-            }
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        }
+                                                }
+
+                                                @Override
+                                                public void onPageSelected(int position) {
+                                                    Objects.requireNonNull(getSupportActionBar()).setTitle(myPagerAdapter.getPageTitle(position));
+                                                }
+
+                                                @Override
+                                                public void onPageScrollStateChanged(int state) {
+                                                }
+                                            }
         );
     }
 }

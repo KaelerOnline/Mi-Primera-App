@@ -10,13 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.teaching.android.miprimeraapp.GamesInteractorCallback;
 import com.teaching.android.miprimeraapp.R;
 import com.teaching.android.miprimeraapp.WebViewActivity;
+import com.teaching.android.miprimeraapp.interactors.GamesFirebseInteractor;
 import com.teaching.android.miprimeraapp.interactors.GamesInteractor;
 import com.teaching.android.miprimeraapp.model.GameModel;
+import com.bumptech.glide.Glide;
 
 import java.util.Objects;
 
@@ -25,13 +27,16 @@ import java.util.Objects;
  */
 public class GameDetailFragment extends Fragment {
 
+    private GamesFirebseInteractor gamesFirebseInteractor;
 
-    public GameDetailFragment() {
+
+    public GameDetailFragment()
+    {
         // Required empty public constructor
     }
 
-    public static GameDetailFragment newInstance (int gameId){
-
+    public static GameDetailFragment newInstance (int gameId)
+    {
         GameDetailFragment fragment = new GameDetailFragment();
         Bundle bundle = new Bundle();
 
@@ -44,33 +49,46 @@ public class GameDetailFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
-        View fragmentView = inflater.inflate(R.layout.fragment_game_detail, container, false);
+        final View fragmentView = inflater.inflate(R.layout.fragment_game_detail, container, false);
 
-        int gameId = Objects.requireNonNull(getArguments()).getInt("game_Id",0);
-        final GameModel game = new GamesInteractor().getGamesWithId(gameId);
+        final int gameId = Objects.requireNonNull(getArguments()).getInt("game_Id",0);
 
-        ImageView icono = fragmentView.findViewById(R.id.Logo);
-        RelativeLayout background = fragmentView.findViewById(R.id.game_container);
-        TextView gamedesc = fragmentView.findViewById(R.id.Description);
-
-        icono.setImageResource(game.getIconDrawable());
-        background.setBackgroundResource(game.getBackgroundDrawable());
-        gamedesc.setText(game.getDescription());
-
-        Button boton = fragmentView.findViewById(R.id.urlButton);
-        boton.setOnClickListener(new View.OnClickListener() {
+        gamesFirebseInteractor = new GamesFirebseInteractor();
+        gamesFirebseInteractor.getGames(new GamesInteractorCallback()
+        {
             @Override
-            public void onClick(View v) {
-                    Intent webintent = new Intent(getContext(),WebViewActivity.class);
-                    webintent.putExtra("url",getString(game.getOfficialWebsiteUrl()));
-                    startActivity(webintent);
+            public void onGamesAvailable()
+            {
+                final GameModel game = gamesFirebseInteractor.getGamesWithId(gameId);
+
+                ImageView icono = fragmentView.findViewById(R.id.Logo);
+                Glide.with(fragmentView).load(game.getIcon()).into(icono);
+
+                ImageView background = fragmentView.findViewById(R.id.game_container);
+                Glide.with(fragmentView).load(game.getBackground()).into(background);
+
+                TextView gamedesc = fragmentView.findViewById(R.id.Description);
+                gamedesc.setText(game.getDescription());
+
+                Button boton = fragmentView.findViewById(R.id.urlButton);
+                boton.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        Intent webintent = new Intent(getContext(),WebViewActivity.class);
+                        webintent.putExtra("url",game.getOfficialWebsiteUrl());
+                        startActivity(webintent);
+                    }
+                });
+
             }
         });
 
         return fragmentView;
-
 
     }
 

@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import java.io.File;
 
-
 public class FourthActivity extends BaseActivity {
 
     protected void setupActionBar(){
@@ -90,16 +89,15 @@ public class FourthActivity extends BaseActivity {
         super.onStart();
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
         String username = sharedPref.getString("username",null);
-        String age = sharedPref.getString("age",null);
-        String email = sharedPref.getString("email",null);
+
 
         TextView username2 = findViewById(R.id.username2);
         TextView email2 = findViewById(R.id.email2);
         TextView age2 = findViewById(R.id.age2);
+        TextView password2 = findViewById(R.id.password2);
 
         username2.setText(username);
-        email2.setText(email);
-        age2.setText(age);
+
     }
 
     @Override
@@ -108,31 +106,25 @@ public class FourthActivity extends BaseActivity {
         TextView username = findViewById(R.id.username2);
         TextView email = findViewById(R.id.email2);
         TextView age = findViewById(R.id.age2);
+        TextView password = findViewById(R.id.password2);
 
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
         SharedPreferences.Editor prefEdit = sharedPref.edit();
         prefEdit.putString("username",username.getText().toString());
         prefEdit.putString("email",email.getText().toString());
         prefEdit.putString("age",age.getText().toString());
+        prefEdit.putString("password",password.getText().toString());
         prefEdit.apply();
     }
 
     public boolean isExternalStorageReadable (){
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)||Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
     }
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
+        return Environment.MEDIA_MOUNTED.equals(state);
     }
 
 }

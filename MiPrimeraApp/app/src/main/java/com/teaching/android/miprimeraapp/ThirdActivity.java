@@ -1,11 +1,14 @@
 package com.teaching.android.miprimeraapp;
 
+import android.arch.persistence.room.Room;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteConstraintException;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,14 +61,25 @@ public class ThirdActivity extends MainActivity {
         intent.putExtra("password",passwordEditText.getText().toString());
         intent.putExtra("age",ageEditText.getText().toString());*/
 
-        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
+        /*SharedPreferences sharedPref = getSharedPreferences(getString(R.string.login_activity_file), Context.MODE_PRIVATE);
         SharedPreferences.Editor prefEdit = sharedPref.edit();
         prefEdit.putString("username",usernameEditText.getText().toString());
         prefEdit.putString("email",emailEditText.getText().toString());
         prefEdit.putString("age",ageEditText.getText().toString());
         prefEdit.putString("password",passwordEditText.getText().toString());
 
-        prefEdit.apply();
+        prefEdit.apply();*/
+
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),AppDatabase.class, "UserDB").allowMainThreadQueries().build();
+
+        UserEntity user = new UserEntity();
+        try{
+            db.userDAO().insert(user);
+        }catch(SQLiteConstraintException sqlExc){
+            Log.d("Insert Error: ",sqlExc.toString());
+        }
+
+
         startActivity(intent);
     }
 }
