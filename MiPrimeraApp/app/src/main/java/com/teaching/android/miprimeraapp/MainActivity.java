@@ -88,7 +88,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void list (View view){
-        Intent intent = new Intent(this,ListActivity.class);
+        Intent intent = new Intent(this,RecyclerViewActivity.class);
         startActivity(intent);
     }
 

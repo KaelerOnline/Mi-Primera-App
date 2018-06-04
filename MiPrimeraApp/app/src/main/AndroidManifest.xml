@@ -4,7 +4,10 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -15,13 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <provider
-            android:authorities="com.teaching.android.miprimeraapp"
             android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.teaching.android.miprimeraapp"
             android:exported="false"
             android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
         </provider>
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme">
@@ -64,11 +69,15 @@
             android:parentActivityName=".ListActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".WebViewActivity" />
+
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action
-                    android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".SensorsActivity" />
+        <activity android:name=".RecyclerViewActivity"></activity>
     </application>
+
 </manifest>
