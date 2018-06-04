@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.teaching.android.miprimeraapp.adapters.MyRecyclerViewAdapter;
 
@@ -18,7 +19,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler_view);
         myRecyclerView = findViewById(R.id.recycler_view);
 
-        RecyclerView.LayoutManager myLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager myLayoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
         myRecyclerView.setLayoutManager(myLayoutManager);
 
         myRecyclerViewAdapter = new MyRecyclerViewAdapter(getResources().getStringArray(R.array.colors));

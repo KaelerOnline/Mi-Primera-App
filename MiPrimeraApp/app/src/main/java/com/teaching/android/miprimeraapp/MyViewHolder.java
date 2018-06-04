@@ -5,6 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MyViewHolder extends RecyclerView.ViewHolder {
     private TextView myTextView;
 
@@ -18,9 +20,11 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
             myTextView.setText(value);
             myTextView.setTextColor(Color.BLACK);
             myTextView.setBackgroundColor(Color.parseColor(value));
+            myTextView.setHeight(new Random().nextInt(800)+200);
         }else{
             myTextView.setText(value);
             myTextView.setBackgroundColor(Color.parseColor(value));
+            myTextView.setHeight(new Random().nextInt(800)+200);
         }
     }
 
