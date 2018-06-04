@@ -78,7 +78,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void tercero (View view){
-        Intent intent = new Intent(this,ThirdActivity.class);
+        Intent intent = new Intent(this,SensorsActivity.class);
         startActivity(intent);
     }
 

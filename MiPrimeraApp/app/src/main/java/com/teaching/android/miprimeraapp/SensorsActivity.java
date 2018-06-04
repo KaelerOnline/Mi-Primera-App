@@ -15,7 +15,7 @@ import java.util.Objects;
 
 public class SensorsActivity extends AppCompatActivity {
 
-    SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+    SensorManager sensorManager;
     Sensor mySensor;
     SensorEventListener myListener;
 
@@ -28,6 +28,7 @@ public class SensorsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mySensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         if (mySensor != null) {
             Objects.requireNonNull(sensorManager).registerListener(myListener= new SensorEventListener() {
