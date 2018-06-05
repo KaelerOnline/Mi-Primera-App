@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.ProgressBar;
@@ -31,9 +33,11 @@ public class MediaPlayerActivity extends AppCompatActivity {
         videoControl.setAnchorView(webVideo);
         webVideo.setMediaController(videoControl);
 
+        ContadorAsyncTask contadorAsyncTask = new ContadorAsyncTask();
+        contadorAsyncTask.execute();
+
         webVideo.setVideoURI(Uri.parse(videoURL));
         webVideo.start();
-
     }
 
     @Override
@@ -58,6 +62,34 @@ public class MediaPlayerActivity extends AppCompatActivity {
     public void onPlayerStop (View view){
         Intent myIntent = new Intent (this, MediaPlayerService.class);
         stopService(myIntent);
+    }
+
+    private class ContadorAsyncTask extends AsyncTask<Void, Integer, Integer>{
+
+        Integer i = 0;
+
+        @Override
+        protected Integer doInBackground(Void... voids) {
+            try{
+                while (i <100){
+                    Thread.sleep(1000);
+                    i++;
+                    publishProgress();
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        protected void onProgressUpdate(Integer... progress){
+            Log.d("CAsyncTask Update: ",i.toString());
+        }
+
+        protected void onPostExecute(Integer... result){
+            Log.d("CAsyncTask Execute: ",i.toString());
+        }
+
     }
 
 }
