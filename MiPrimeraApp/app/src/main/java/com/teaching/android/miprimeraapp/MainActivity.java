@@ -91,5 +91,9 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent(this,RecyclerViewActivity.class);
         startActivity(intent);
     }
+    public  void player(View view){
+        Intent intent = new Intent(this,MediaPlayerActivity.class);
+        startActivity(intent);
+    }
 
 }

@@ -72,18 +72,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
-        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@+id/button"
         android:contentDescription="@string/todo"
         android:onClick="tercero"
         app:srcCompat="@drawable/ic_action_doomguy_reap_face" />
 
 
     <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_alignEnd="@+id/button"
+        android:contentDescription="@string/todo"
+        android:onClick="player"
+        android:tint="@android:color/holo_blue_dark"
+        app:srcCompat="@drawable/ic_action_doomguy_reap_face" />
+
+    <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
+        android:layout_toStartOf="@+id/button"
         android:background="@android:color/transparent"
         android:contentDescription="@string/todo"
         android:onClick="gallery"
@@ -94,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
+        android:layout_toEndOf="@+id/button"
         android:background="@android:color/transparent"
         android:contentDescription="@string/todo"
         android:onClick="list"

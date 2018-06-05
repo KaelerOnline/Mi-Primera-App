@@ -30,4 +30,8 @@
     <string name="BlakeStone">Play as Interstellar Agent Blake Stone as he\'s sent to face off against the evil Dr Goldfire.
     Travel to a set of hostile facilities filled with overzealous guards, insane scientists, their mutant creations and more.
     Sabotage Goldfire\'s operations by taking away his supplies and gold and end his reign of terror across the stars!</string>
+    <string name="audio">Audio:</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
 </resources>

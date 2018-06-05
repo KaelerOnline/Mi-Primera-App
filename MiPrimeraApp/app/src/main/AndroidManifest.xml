@@ -77,7 +77,13 @@
         </service>
 
         <activity android:name=".SensorsActivity" />
-        <activity android:name=".RecyclerViewActivity"></activity>
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".MediaPlayerActivity" />
+
+        <service
+            android:name=".MediaPlayerService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

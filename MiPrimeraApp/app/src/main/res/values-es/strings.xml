@@ -36,4 +36,8 @@
     <string name="BlakeStone">Encarna al Agente Interestelar Blake Stone, el cual há sido enviado para acabar con el maligno Dr Goldfire.
     Viaja a un complejo hostil repleto de guardas demasiado entusiastas , científicos locos, sus creaciones mutantes y mas.
     ¡Sabotea las operaciones de Goldfire acabando con sus suministros y oro y termina su reino de terror en el cosmos!</string>
+    <string name="audio">Audio:</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
 </resources>

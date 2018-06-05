@@ -74,5 +74,9 @@
 
     <!-- Shared Preferences -->
     <string name="login_activity_file">com.teaching.android.miprimeraapp.LOGIN_ACTIVITY_FILE</string>
+    <string name="audio">Audio:</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
 
 </resources>
